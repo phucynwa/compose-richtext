@@ -1,0 +1,14 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:printing
+com.zachklipp.richtext.ui.printing
+module:richtext-commonmark
+com.halilibo.richtext.markdown
+module:richtext-ui
+com.halilibo.richtext.ui
+com.halilibo.richtext.ui.string
+module:richtext-ui-material
+com.halilibo.richtext.ui.material
+module:slideshow
+com.zachklipp.richtext.ui.slideshow
