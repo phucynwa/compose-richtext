@@ -1,5 +1,8 @@
 package com.halilibo.richtext.commonmark
 
+import com.halilibo.richtext.commonmark.latex.Latex
+import com.halilibo.richtext.commonmark.latex.LatexBlock
+import com.halilibo.richtext.commonmark.latex.LatexExtension
 import com.halilibo.richtext.markdown.node.AstBlockQuote
 import com.halilibo.richtext.markdown.node.AstCode
 import com.halilibo.richtext.markdown.node.AstDocument
@@ -11,6 +14,7 @@ import com.halilibo.richtext.markdown.node.AstHtmlBlock
 import com.halilibo.richtext.markdown.node.AstHtmlInline
 import com.halilibo.richtext.markdown.node.AstImage
 import com.halilibo.richtext.markdown.node.AstIndentedCodeBlock
+import com.halilibo.richtext.markdown.node.AstLatex
 import com.halilibo.richtext.markdown.node.AstLink
 import com.halilibo.richtext.markdown.node.AstLinkReferenceDefinition
 import com.halilibo.richtext.markdown.node.AstListItem
@@ -85,6 +89,7 @@ internal fun convert(
   )
 
   val newNodeType: AstNodeType? = when (node) {
+    is Latex -> AstLatex(node.literal)
     is BlockQuote -> AstBlockQuote
     is BulletList -> AstUnorderedList(bulletMarker = node.bulletMarker)
     is Code -> AstCode(literal = node.literal)
@@ -191,6 +196,7 @@ public actual class CommonmarkAstNodeParser actual constructor(
       listOfNotNull(
         TablesExtension.create(),
         StrikethroughExtension.create(),
+        LatexExtension.create(),
         if (options.autolink) AutolinkExtension.create() else null
       )
     )

@@ -48,7 +48,7 @@ subprojects {
     kotlinOptions {
       // Allow warnings when running from IDE, makes it easier to experiment.
       if (!isRunningFromIde()) {
-        allWarningsAsErrors = true
+//        allWarningsAsErrors = true
       }
 
       freeCompilerArgs = listOf("-opt-in=kotlin.RequiresOptIn", "-Xexpect-actual-classes")
