@@ -149,6 +149,11 @@ public data class AstStrikethrough(
 ) : AstInlineNodeType()
 
 @Immutable
+public data class AstLatex(
+  val content: String
+) : AstInlineNodeType()
+
+@Immutable
 public data class AstLink(
   val destination: String,
   val title: String

@@ -13,6 +13,7 @@ import com.halilibo.richtext.markdown.node.AstHeading
 import com.halilibo.richtext.markdown.node.AstHtmlBlock
 import com.halilibo.richtext.markdown.node.AstIndentedCodeBlock
 import com.halilibo.richtext.markdown.node.AstInlineNodeType
+import com.halilibo.richtext.markdown.node.AstLatex
 import com.halilibo.richtext.markdown.node.AstLinkReferenceDefinition
 import com.halilibo.richtext.markdown.node.AstListItem
 import com.halilibo.richtext.markdown.node.AstNode

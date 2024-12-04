@@ -27,6 +27,12 @@ kotlin {
     val androidMain by getting {
       dependencies {
         implementation(Compose.coil)
+
+        implementation(compose.material3)
+
+        implementation("ru.noties:jlatexmath-android:0.2.0")
+        implementation("ru.noties:jlatexmath-android-font-cyrillic:0.2.0")
+        implementation("ru.noties:jlatexmath-android-font-greek:0.2.0")
       }
     }
 
@@ -34,6 +40,8 @@ kotlin {
       dependencies {
         implementation(compose.desktop.currentOs)
         implementation(Network.okHttp)
+
+        implementation("org.scilab.forge:jlatexmath:1.0.7")
       }
     }
 

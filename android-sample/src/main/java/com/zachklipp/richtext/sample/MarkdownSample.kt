@@ -430,4 +430,39 @@ private val sampleMarkdown = """
   [arbitrary case-insensitive reference text]: https://www.mozilla.org
   [1]: http://slashdot.org
   [link text itself]: http://www.reddit.com
-""".trimIndent()
+  Giả sử có một hệ thống mạng Reservation với $5$ trạm. Trạm đặt chỗ trước khi gửi dữ liệu mất $1ms$. Trạm thực hiện giao dịch truyền dữ liệu cần một khoảng thời gian là $4ms$.
+  a) Giả sử mỗi trạm đều có dữ liệu để gửi. Hãy tính tổng thời gian cần thiết để tất cả các trạm có thể gửi dữ liệu của mình một lần.
+  b) Trong một chu kỳ giao dịch, trạm $1$, $2$ và $4$ có dữ liệu để gửi, còn trạm $3$ và $5$ không có dữ liệu để gửi. Hãy tính tổng thời gian cần thiết để hoàn thành một chu kỳ giao dịch (các trạm không truyền dữ liệu cũng cần đặt chỗ).
+
+### Hướng dẫn
+
+a) Mỗi trạm cần $1ms$ để đặt chỗ và $4ms$ để truyền dữ liệu. Vì vậy, tổng thời gian cần thiết để một trạm hoàn thành giao dịch là $1ms$ (đặt chỗ) + $4ms$ (truyền dữ liệu) = $5ms$. Với $5$ trạm, tổng thời gian cần thiết sẽ là $5ms \times 5 = 25ms$.
+
+b) Dù trạm $3$ và $5$ không truyền dữ liệu, chúng vẫn cần $1ms$ để đặt chỗ. Các trạm $1$, $2$ và $4$ sẽ mất $1ms$ để đặt chỗ và $4ms$ để truyền dữ liệu. Vì vậy:
+
+- Trạm $1, 2, 4$: $1ms$ (đặt chỗ) + $4ms$ (truyền dữ liệu) = $5ms$ cho mỗi trạm.
+- Trạm $3$ và $5$: $1ms$ (đặt chỗ) + $0ms$ (không truyền dữ liệu) = $1ms$ cho mỗi trạm.
+
+Tổng thời gian cho một chu kỳ giao dịch sẽ là:
+
+$$
+(5ms \times 3) + (1ms \times 2) = 15ms + 2ms = 17ms
+$$
+""".trimIndent() +
+    "\n$$\n\\begin{array}{lr}\\mbox{\\textcolor{Blue}{Russian}}&\\mbox{\\textcolor{Melon}{Greek}}\\\\" +
+    "\\mbox{" + "привет мир".uppercase() + "}&\\mbox{" + "γειά κόσμο".uppercase() + "}\\\\" +
+    "\\mbox{привет мир}&\\mbox{γειά κόσμο}\\\\" +
+    "\\mathbf{\\mbox{привет мир}}&\\mathbf{\\mbox{γειά κόσμο}}\\\\" +
+    "\\mathit{\\mbox{привет мир}}&\\mathit{\\mbox{γειά κόσμο}}\\\\" +
+    "\\mathsf{\\mbox{привет мир}}&\\mathsf{\\mbox{γειά κόσμο}}\\\\" +
+    "\\mathtt{\\mbox{привет мир}}&\\mathtt{\\mbox{γειά κόσμο}}\\\\" +
+    "\\mathbf{\\mathit{\\mbox{привет мир}}}&\\mathbf{\\mathit{\\mbox{γειά κόσμο}}}\\\\" +
+    "\\mathbf{\\mathsf{\\mbox{привет мир}}}&\\mathbf{\\mathsf{\\mbox{γειά κόσμο}}}\\\\" +
+    "\\mathsf{\\mathit{\\mbox{привет мир}}}&\\mathsf{\\mathit{\\mbox{γειά κόσμο}}}\\\\" +
+    "&\\\\" +
+    "\\mbox{\\textcolor{Salmon}{Bulgarian}}&\\mbox{\\textcolor{Tan}{Serbian}}\\\\" +
+    "\\mbox{здравей свят}&\\mbox{Хелло уорлд}\\\\" +
+    "&\\\\" +
+    "\\mbox{\\textcolor{Turquoise}{Bielorussian}}&\\mbox{\\textcolor{LimeGreen}{Ukrainian}}\\\\" +
+    "\\mbox{прывітаньне Свет}&\\mbox{привіт світ}\\\\" +
+    "\\end{array}\n$$"

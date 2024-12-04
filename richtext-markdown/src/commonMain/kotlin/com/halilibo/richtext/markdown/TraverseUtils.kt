@@ -3,6 +3,7 @@ package com.halilibo.richtext.markdown
 import com.halilibo.richtext.markdown.node.AstCode
 import com.halilibo.richtext.markdown.node.AstHardLineBreak
 import com.halilibo.richtext.markdown.node.AstImage
+import com.halilibo.richtext.markdown.node.AstLatex
 import com.halilibo.richtext.markdown.node.AstNode
 import com.halilibo.richtext.markdown.node.AstNodeType
 import com.halilibo.richtext.markdown.node.AstSoftLineBreak
@@ -46,4 +47,5 @@ internal fun AstNode.isRichTextTerminal(): Boolean {
           || type is AstImage
           || type is AstSoftLineBreak
           || type is AstHardLineBreak
+          || type is AstLatex
 }

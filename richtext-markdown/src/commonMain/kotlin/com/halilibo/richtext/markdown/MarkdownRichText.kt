@@ -15,6 +15,7 @@ import com.halilibo.richtext.markdown.node.AstHardLineBreak
 import com.halilibo.richtext.markdown.node.AstHeading
 import com.halilibo.richtext.markdown.node.AstImage
 import com.halilibo.richtext.markdown.node.AstIndentedCodeBlock
+import com.halilibo.richtext.markdown.node.AstLatex
 import com.halilibo.richtext.markdown.node.AstLink
 import com.halilibo.richtext.markdown.node.AstLinkReferenceDefinition
 import com.halilibo.richtext.markdown.node.AstListItem
@@ -93,6 +94,14 @@ private fun computeRichTextString(astNode: AstNode): RichTextString {
         is AstStrikethrough -> richTextStringBuilder.pushFormat(
           RichTextString.Format.Strikethrough
         )
+        is AstLatex -> {
+          richTextStringBuilder.appendInlineContent(
+            content = InlineContent {
+              LaTeX(currentNodeType.content)
+            }
+          )
+          null
+        }
         is AstImage -> {
           richTextStringBuilder.appendInlineContent(
             content = InlineContent(
